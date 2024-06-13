@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaConsumoApiRest.Views.MostrarProductosPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#F71937" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+                <Label Text="SISTEMA DE PRODUCTOS 'API'" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+            <StackLayout>
+                <ListView x:Name="ProductoListaview" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="10" Padding="10" CornerRadius="10" BorderColor="#cccccc">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Grid.Row="0" Grid.ColumnSpan="2">
+                                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="20"/>
+                                            <Label Text="{Binding Precio, StringFormat='{0:C}'}" FontSize="16" TextColor="Gray"/>
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
+                                            <Button Text="Editar" BackgroundColor="#2196F3" TextColor="White" Command="{Binding EditCommand}"/>
+                                            <Button Text="Eliminar" BackgroundColor="#F44336" TextColor="White" Command="{Binding DeleteCommand}" Margin="5,0,0,0"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

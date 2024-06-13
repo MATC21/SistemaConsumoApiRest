@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaConsumoApiRest.Views.Detail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#F71937" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+                <Label Text="SISTEMA DE PRODUCTOS 'API'" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+            <Button Text="Api" x:Name="btnIrApi" Clicked="btnIrApi_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
