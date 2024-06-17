@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#F71937" Padding="24" CornerRadius="0" Margin="0,0,0,20">
-                <Label Text="SISTEMA DE PRODUCTOS 'API'" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+                <Label Text="LISTA DE PRODUCTOS" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
             <StackLayout>
                 <ListView x:Name="ProductoListaview" HasUnevenRows="True">
@@ -30,8 +30,8 @@
                                         </StackLayout>
 
                                         <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End">
-                                            <Button Text="Editar" BackgroundColor="#2196F3" TextColor="White" Command="{Binding EditCommand}"/>
-                                            <Button Text="Eliminar" BackgroundColor="#F44336" TextColor="White" Command="{Binding DeleteCommand}" Margin="5,0,0,0"/>
+                                            <Button Text="Editar" x:Name="btnEditar" Clicked="btnEditar_Clicked" BackgroundColor="#2196F3" TextColor="White"/>
+                                            <Button Text="Eliminar" x:Name="btnEliminar" Clicked="btnEliminar_Clicked" BackgroundColor="#F44336" TextColor="White" Margin="5,0,0,0"/>
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

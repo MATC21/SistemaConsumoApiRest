@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SistemaConsumoApiRest.Negocio;
+using SistemaConsumoApiRest.Views.ViewPartial;
 
 namespace SistemaConsumoApiRest.Views
 {
@@ -41,6 +42,44 @@ namespace SistemaConsumoApiRest.Views
             else
             {
                 await DisplayAlert("Error", "No se pudieron cargar los productos", "OK");
+            }
+        }
+
+        private async void btnEditar_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var productos = button?.BindingContext as Producto;
+
+            if(productos != null)
+            {
+                await Navigation.PushAsync(new Editar(productos));
+            }
+        }
+
+        private async void btnEliminar_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var producto = button?.BindingContext as Producto;
+
+            if (producto != null)
+            {
+                bool confirm = await DisplayAlert("Confirmar", $"¿Está seguro de eliminar el producto {producto.Nombre}?", "Sí", "No");
+
+                if (confirm)
+                {
+                    bool eliminado = await _productoNegocio.EliminarProducto(producto.Id);
+
+                    if (eliminado)
+                    {
+                        _productos.Remove(producto);
+                        await DisplayAlert("Exito", "Producto eliminado correctamente", "Ok");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "No se pudo eliminar el producto", "Ok");
+                    }
+                }
+
             }
         }
     }

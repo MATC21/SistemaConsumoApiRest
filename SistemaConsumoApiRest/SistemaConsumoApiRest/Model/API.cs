@@ -17,10 +17,10 @@ namespace SistemaConsumoApiRest.Model
         public API()
         {
             this.ListarProductos = "http://192.168.100.50:45455/api/Productos";
-            this.ObtenerProducto = "/api/products/id";
-            this.CrearProducto = "/api/products";
-            this.ActualizarProducto = "/api/products/id";
-            this.DeleteProducto = "/api/products/id";
+            this.ObtenerProducto = "http://192.168.100.50:45455/api/Productos/id";
+            this.CrearProducto = "http://192.168.100.50:45455/api/Productos";
+            this.ActualizarProducto = "http://192.168.100.50:45455/api/productos";
+            this.DeleteProducto = "http://192.168.100.50:45455/api/productos";
         }
     }
 }

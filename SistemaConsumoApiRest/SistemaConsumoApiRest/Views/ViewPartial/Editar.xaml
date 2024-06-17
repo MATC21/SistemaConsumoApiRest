@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaConsumoApiRest.Views.ViewPartial.Editar">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Frame BackgroundColor="#F71937" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+                <Label Text="EDITAR PRODUCTO" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+
+            <Entry x:Name="NombreEntry" Placeholder="Nombre del producto" />
+            <Entry x:Name="StockEntry" Placeholder="Stock" Keyboard="Numeric" />
+            <Entry x:Name="PrecioEntry" Placeholder="Precio" Keyboard="Text" TextChanged="PrecioEntry_TextChanged"/>
+
+            <Button Text="Guardar" x:Name="btnActualizarProducto" BackgroundColor="#2196F3" TextColor="White" Clicked="btnActualizarProducto_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

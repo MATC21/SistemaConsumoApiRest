@@ -23,9 +23,10 @@ namespace SistemaConsumoApiRest.Views
             await App.MasterDet.Detail.Navigation.PushAsync(new MostrarProductosPage());
         }
 
-        private void btnAgregar_Clicked(object sender, EventArgs e)
+        private async void btnAgregar_Clicked(object sender, EventArgs e)
         {
-
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new CrearProducto());
         }
     }
 }
